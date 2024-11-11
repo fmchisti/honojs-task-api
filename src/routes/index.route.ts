@@ -27,4 +27,29 @@ const index = createRouter().openapi(indexRoute, (c) => {
   }, 200);
 });
 
+export const healthCheck = createRouter().openapi(
+  createRoute({
+    method: "get",
+    path: "/healthcheck",
+    responses: {
+      200: {
+        content: {
+          "application/json": {
+            schema: z.union(
+              [
+                z.object({ name: z.string() }),
+                z.object({ message: z.string() }),
+              ],
+            ),
+          },
+        },
+        description: "Health Check",
+      },
+    },
+  }),
+  (c) => {
+    return c.json({ message: "TEST" }, 200);
+  },
+);
+
 export default index;
