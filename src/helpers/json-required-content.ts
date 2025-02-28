@@ -1,4 +1,4 @@
-import type { ZodSchema } from "../types/index.js";
+import type { ZodSchema } from "../types";
 
 export function jsonRequredContent<T extends ZodSchema>(
   schema: T,

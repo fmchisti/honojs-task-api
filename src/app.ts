@@ -1,8 +1,8 @@
-import type { AppBindings } from "./types/index.js";
+import type { AppBindings } from "./types";
 import { OpenAPIHono } from "@hono/zod-openapi";
-import { notFound } from "./helpers/not-found.js";
-import { onError } from "./helpers/on-error.js";
-import myLogger from "./middleweras/pino-logger.js";
+import { notFound } from "./helpers/not-found";
+import { onError } from "./helpers/on-error";
+import myLogger from "./middleweras/pino-logger";
 
 export function createRouter() {
   return new OpenAPIHono<AppBindings>({

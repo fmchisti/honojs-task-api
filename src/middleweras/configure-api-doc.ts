@@ -1,4 +1,4 @@
-import type { AppOpenAPI } from "../types/index.js";
+import type { AppOpenAPI } from "../types";
 import { apiReference } from "@scalar/hono-api-reference";
 
 export function configureApiDoc(app: AppOpenAPI) {
@@ -6,7 +6,7 @@ export function configureApiDoc(app: AppOpenAPI) {
     openapi: "3.0.0",
     info: {
       version: "1.0.0",
-      title: "Task API",
+      title: "GHL Upsell Booster",
     },
   });
 
@@ -15,7 +15,7 @@ export function configureApiDoc(app: AppOpenAPI) {
     apiReference({
       theme: "kepler",
       layout: "classic",
-      pageTitle: "Tasks API DOCS",
+      pageTitle: "GHL Upsell Booster DOCS",
       defaultHttpClient: {
         targetKey: "javascript",
         clientKey: "fetch",
